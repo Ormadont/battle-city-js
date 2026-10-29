@@ -8,7 +8,8 @@ const path = require('path');
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 const PORT = 9444;
 const ROOT = path.resolve(__dirname, '..');
-const URL = 'http://127.0.0.1:' + (process.argv[2] || '8299') + '/';
+const target = process.argv[2] || '8299';
+const URL = target.indexOf('://') >= 0 ? target : 'http://127.0.0.1:' + target + '/';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 let ws;
