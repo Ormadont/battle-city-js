@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#0b0b0d">
+  <title>Battle City — танковая битва</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="stage">
+      <canvas id="game" width="560" height="440" aria-label="Battle City — танковая аркада"></canvas>
+    </div>
+
+    <div id="touch-controls">
+      <div class="dpad">
+        <button class="tbtn up" data-key="ArrowUp" aria-label="Вверх">▲</button>
+        <button class="tbtn left" data-key="ArrowLeft" aria-label="Влево">◀</button>
+        <button class="tbtn down" data-key="ArrowDown" aria-label="Вниз">▼</button>
+        <button class="tbtn right" data-key="ArrowRight" aria-label="Вправо">▶</button>
+      </div>
+      <div class="actions">
+        <button class="tbtn small" data-key="KeyM" aria-label="Звук">♪</button>
+        <button class="tbtn small" data-key="KeyP" aria-label="Пауза">II</button>
+        <button class="tbtn fire" data-key="Space" aria-label="Огонь">ОГОНЬ</button>
+      </div>
+    </div>
+
+    <p class="hint">Стрелки / WASD — движение &nbsp;·&nbsp; Пробел / J — огонь &nbsp;·&nbsp; P — пауза &nbsp;·&nbsp; M — звук</p>
+  </div>
+
+  <div id="net-panel" class="hidden">
+    <div class="net-box">
+      <h2>СЕТЬ · ДВА ИГРОКА</h2>
+      <p id="net-own" class="net-own">ВАШ IP: —</p>
+      <label for="net-ip">IP ВТОРОГО ИГРОКА</label>
+      <input id="net-ip" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="192.168.1.5">
+      <p id="net-status" class="net-status" data-kind="idle">—</p>
+      <div class="net-actions">
+        <button id="net-connect" class="nbtn">ПОДКЛЮЧИТЬСЯ</button>
+        <button id="net-start" class="nbtn primary hidden">НАЧАТЬ БОЙ</button>
+      </div>
+      <button id="net-back" class="nbtn ghost">НАЗАД</button>
+      <p id="net-help" class="net-help">На обоих компьютерах запустите <b>node server.js</b>, откройте <b>http://IP:ПОРТ/</b> и введите IP второго игрока.</p>
+    </div>
+  </div>
+
+  <script src="js/levels.js"></script>
+  <script src="js/gen.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/net.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
